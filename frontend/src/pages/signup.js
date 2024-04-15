@@ -27,6 +27,7 @@ const Signup=()=>{
                     value={password}
                 />
             <button disabled={isLoading}>Sign Up</button>
+            {(!error) && <div className="notice"> Password must include at least one Capital letter, one number, and one symbol.</div>}
             {error && <div className="error">{error}</div>}
         </form>
     )
