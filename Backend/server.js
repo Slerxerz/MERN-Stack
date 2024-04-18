@@ -33,5 +33,5 @@ mongoose.connect(process.env.MONGO_URI)
     })
 
     app.get('/',(res,req)=>{
-        res.statusCode(200).json({message:"Connected to the backend"})
+        res.status(200).json({message:"Connected to the backend"})
     })
