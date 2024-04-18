@@ -22,11 +22,16 @@ app.use('/api/user',userRoutes)
 //connect to db
 mongoose.connect(process.env.MONGO_URI)
     .then(()=>{
+        const PORT = process.env.PORT || 8000
         //listen for requests
-        app.listen(process.env.PORT,()=>{
-            console.log('Connected to the Database and listening on port',process.env.PORT);
+        app.listen(PORT,()=>{
+            console.log('Connected to the Database and listening on port',PORT);
         });
     })
     .catch((error) => {
         console.log(error)
+    })
+
+    app.get('/',(res,req)=>{
+        res.statusCode(200).json({message:"Connected to the backend"})
     })
