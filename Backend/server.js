@@ -32,8 +32,3 @@ mongoose.connect(process.env.MONGO_URI)
     .catch((error) => {
         console.log(error)
     })
-
-app.get('/',(res,req)=>{
-    res.status(200).json({message:"Connected to the backend"})
-})
-    
