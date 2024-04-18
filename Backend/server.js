@@ -9,7 +9,7 @@ const userRoutes=require('./routes/user')
 //express app
 const app=express();
 app.use(express.json())
-app.use(cors());
+app.use(cors({origin:'https://workout-tracker-frontend-guci.onrender.com'}));
 
 app.use((req, res, next) => {
     console.log(req.path,req.method)
