@@ -19,6 +19,7 @@ app.use((req, res, next) => {
 app.use('/api/workouts',workoutRoutes)
 app.use('/api/user',userRoutes)
 
+
 //connect to db
 mongoose.connect(process.env.MONGO_URI)
     .then(()=>{
@@ -32,6 +33,7 @@ mongoose.connect(process.env.MONGO_URI)
         console.log(error)
     })
 
-    app.get('/',(res,req)=>{
-        res.status(200).json({message:"Connected to the backend"})
-    })
+app.get('/',(res,req)=>{
+    res.status(200).json({message:"Connected to the backend"})
+})
+    
